@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - WebApplication9</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/WebApplication9.style.css" asp-append-version="true"/>
+    <!-- Добавляем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pA3MqJDQ1z1KFIeU7FqgxlZc9UwPLVZ9AtyFXIDJQnL8NgldqlU0dK/3ZarVKFv8iVxkgQh6x0HqlppwZV7iXA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body id="page-top">
+    <!-- Вращающийся фон (если требуется) -->
+    <div class="space"></div>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#signup">Contact</a></li>
+                    <!-- Добавляем дополнительные пункты меню ASP.NET -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="PetAnimals" asp-action="Index">Домашні тварини</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="WildAnimals" asp-action="Index">Дикі тварини</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - WebApplication9 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
